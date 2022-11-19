@@ -1,6 +1,7 @@
 %{
-#include "tokens.hpp"
+
 #include "output.hpp"
+#include "parser.tab.hpp"
 %}
 
 %option yylineno
