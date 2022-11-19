@@ -10,6 +10,4 @@ namespace output {
     void errorSyn(const int lineno);
 };
 
-
-//just to see if i did the git clone ok...
 #endif
