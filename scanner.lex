@@ -2,19 +2,14 @@
 
 #include "output.hpp"
 #include "parser.tab.hpp"
+#include <iostream>
+#include <stdlib.h>
 %}
 
 %option yylineno
 %option noyywrap
 
-digit [0-9]
-letter [a-zA-Z]
 whitespace ([\t\n\r ])
-relop ==|!=|<|>|<=|>=
-binop [\*\+\-\/]
-word ({letter}[0-9a-zA-Z]*) 
-num ([1-9]{digit}*)|[0]
-comment \/\/[^\r\n]*[\r|\n|\r\n]?
 
 %%
 
@@ -40,14 +35,15 @@ continue return CONTINUE;
 \) return RPAREN;
 \{ return LBRACE;
 \} return RBRACE;
-{relop} return RELOP;
-{binop} return BINOP;
+(==|!=|<|>|<=|>=) return RELOP;
+[\*\+\-\/] return BINOP;
 \= return ASSIGN;
-{word} return ID;
-{num} return NUM;
-{comment} ;
-{whitespace};
+([a-zA-Z][a-zA-Z0-9]*) return ID;
+([1-9][0-9]*)|[0] return NUM;
+(\/\/[^\r\n]*[\r|\n|\r\n]?) ;
+{whitespace} ;
 
-"([^\n\r\"\\]|\\[rnt\"\\])+" return STRING;
+(\"([^\n\r\"\\]|\\[rnt\"\\])+\") return STRING;
+
 . {output::errorLex(yylineno);}
 %%

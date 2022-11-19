@@ -9,7 +9,6 @@
 	extern int yylex();
 	int yyerror(const char * message);
 %}
-
 %token tklp tkrp
 %token<constVal> tkconst
 %left tkor
