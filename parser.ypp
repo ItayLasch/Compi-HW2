@@ -1,21 +1,21 @@
 %{
-	#include "output.hpp"
-	#include <iostream>
-	#include <stdlib.h>
+        #include "output.hpp"
+        #include <iostream>
+        #include <stdlib.h>
 
-	using namespace std;
-    using namespace output;
+        using namespace std;
+        using namespace output;
 
 	extern int yylex();
-    extern int yylineno;
+        extern int yylineno;
 	int yyerror(const char * message);
 %}
 
-%token ID NUM STRING
-%token VOID INT BYTE B BOOL 
-%nonassoc NOT
-%nonassoc OR
-%nonassoc AND
+%left ID NUM STRING
+%nonassoc VOID INT BYTE B BOOL 
+%nonassoc ASSIGN
+%left OR
+%left AND
 %nonassoc TRUE
 %nonassoc FALSE
 %nonassoc RETURN
@@ -27,9 +27,9 @@
 %nonassoc COMMA
 %nonassoc LBRACE
 %nonassoc RBRACE
-%nonassoc ASSIGN
 %right RELOP
 %left BINOP
+%left NOT
 %nonassoc LPAREN
 %nonassoc RPAREN
 %nonassoc ELSE
