@@ -32,8 +32,8 @@
 %right BINOP_MUL_DIV
 %left BINOP
 %left NOT
-%nonassoc LPAREN
-%nonassoc RPAREN
+%nonassoc LPAREN //change to nonassoc?
+%nonassoc RPAREN //change to nonassoc?
 %nonassoc ELSE
 
 %%
