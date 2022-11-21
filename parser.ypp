@@ -27,7 +27,9 @@
 %nonassoc COMMA
 %nonassoc LBRACE
 %nonassoc RBRACE
+%right RELOP_EQ
 %right RELOP
+%right BINOP_MUL_DIV
 %left BINOP
 %left NOT
 %nonassoc LPAREN
@@ -82,6 +84,7 @@ Type    :INT {printProductionRule(30);}
 
 Exp :LPAREN Exp RPAREN {printProductionRule(33);}
     |Exp BINOP Exp {printProductionRule(34);}
+    |Exp BINOP_MUL_DIV Exp {printProductionRule(34);}
     |ID {printProductionRule(35);}
     |Call {printProductionRule(36);}
     |NUM {printProductionRule(37);}   
@@ -93,6 +96,7 @@ Exp :LPAREN Exp RPAREN {printProductionRule(33);}
     |Exp AND Exp {printProductionRule(43);}
     |Exp OR Exp {printProductionRule(44);}
     |Exp RELOP Exp {printProductionRule(45);}
+    |Exp RELOP_EQ Exp {printProductionRule(45);}
     |LPAREN Type RPAREN Exp {printProductionRule(46);}
 %%
 
