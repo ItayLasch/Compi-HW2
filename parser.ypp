@@ -23,7 +23,6 @@
 %nonassoc WHILE
 %nonassoc BREAK
 %nonassoc CONTINUE
-%left SC
 %nonassoc COMMA
 %nonassoc LBRACE
 %nonassoc RBRACE
@@ -32,8 +31,9 @@
 %right BINOP_MUL_DIV
 %left BINOP
 %left NOT
-%nonassoc LPAREN //change to right?
-%nonassoc RPAREN //change to right?
+%right LPAREN
+%right RPAREN
+%left SC
 %nonassoc ELSE
 
 %%
