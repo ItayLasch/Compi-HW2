@@ -38,7 +38,7 @@ continue return CONTINUE;
 (<|>|<=|>=) return RELOP;
 (==|!=)  return RELOP_EQ;
 [\+\-] return BINOP;
-[\*\/] return BINOP_MUL_DIV
+[\*\/] return BINOP_MUL_DIV;
 \= return ASSIGN;
 ([a-zA-Z][a-zA-Z0-9]*) return ID;
 ([1-9][0-9]*)|[0] return NUM;
