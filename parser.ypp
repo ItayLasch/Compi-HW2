@@ -28,8 +28,8 @@
 %nonassoc RBRACE
 %right RELOP_EQ
 %right RELOP
+%right BINOP
 %right BINOP_MUL_DIV
-%left BINOP
 %left NOT
 %right LPAREN
 %right RPAREN
