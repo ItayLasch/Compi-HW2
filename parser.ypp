@@ -11,21 +11,12 @@
 	int yyerror(const char * message);
 %}
 
+%nonassoc VOID INT BYTE B BOOL
 %left ID NUM STRING
-%nonassoc VOID INT BYTE B BOOL 
 %right ASSIGN
 %left OR
 %left AND
-%nonassoc TRUE
-%nonassoc FALSE
-%nonassoc RETURN
-%nonassoc IF
-%nonassoc WHILE
-%nonassoc BREAK
-%nonassoc CONTINUE
-%nonassoc COMMA
-%nonassoc LBRACE
-%nonassoc RBRACE
+%nonassoc TRUE FALSE RETURN IF WHILE BREAK CONTINUE COMMA LBRACE RBRACE
 %left RELOP_EQ
 %left RELOP
 %left BINOP
