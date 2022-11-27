@@ -13,7 +13,7 @@
 
 %left ID NUM STRING
 %nonassoc VOID INT BYTE B BOOL 
-%nonassoc ASSIGN
+%right ASSIGN
 %left OR
 %left AND
 %nonassoc TRUE
@@ -26,13 +26,13 @@
 %nonassoc COMMA
 %nonassoc LBRACE
 %nonassoc RBRACE
-%right RELOP_EQ
-%right RELOP
-%right BINOP
-%right BINOP_MUL_DIV
-%left NOT
-%right LPAREN
-%right RPAREN
+%left RELOP_EQ
+%left RELOP
+%left BINOP
+%left BINOP_MUL_DIV
+%right NOT
+%left LPAREN
+%left RPAREN
 %left SC
 %nonassoc ELSE
 
